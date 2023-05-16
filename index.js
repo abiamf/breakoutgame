@@ -150,4 +150,4 @@ function init(){
   }
 }
 
-setInterval(init, 10);
+setInterval(init, 30);
