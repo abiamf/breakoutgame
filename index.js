@@ -47,7 +47,7 @@ function mouseMoveHandler(e) {
 function drawPaddle() {
     ctx.beginPath();
     ctx.roundRect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight, 30);
-    ctx.fillStyle = '#534f52';
+    ctx.fillStyle = '#00755E';
     ctx.fill();
     ctx.closePath();
 }
