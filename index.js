@@ -22,7 +22,7 @@ let rowCount = 5,
     leftOffset = 33,
     score = 0;
 
-// Bricks array
+
 let bricks = [];
 for (let c = 0; c < columnCount; c++) {
     bricks[c] = [];
