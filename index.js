@@ -98,20 +98,18 @@ function hitDetection() {
     }
 }
 
-function showGameOver() {
-  const gameOverElement = document.createElement('div');
-  gameOverElement.id = 'game-over';
-  gameOverElement.style.display = 'none';
-  gameOverElement.innerHTML = `
-    <div>
-      <h2>Fim de jogo!</h2>
-      <p>Sua pontuação final foi: <span id="final-score"></span></p>
-      <button onclick="restart()">Jogar novamente</button>
-    </div>
-  `;
-  canvas.parentNode.appendChild(gameOverElement);
-}
-
+function showGameOver(){
+const gameOverElement = document.createElement('div');
+gameOverElement.id = 'game-over';
+gameOverElement.style.display = 'none';
+gameOverElement.innerHTML = `
+  <div>
+    <h2>Fim de jogo!</h2>
+    <p>Sua pontuação final foi: <span id="final-score"></span></p>
+    <button onclick="restart()">Jogar novamente</button>
+  </div>
+`;
+canvas.parentNode.appendChild(gameOverElement);}
 
 function restart() {
   
@@ -138,6 +136,12 @@ function init(){
 
   x += dx;
   y += dy;
+  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+    dx = -dx;
+  }
+
+  x += dx;
+  y += dy;
 
   if(y + dy > canvas.height - ballRadius){
     if(x > paddleX && x < paddleX + paddleWidth){
@@ -150,4 +154,4 @@ function init(){
   }
 }
 
-setInterval(init, 30);
+setInterval(init, 10);
