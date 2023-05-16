@@ -126,12 +126,15 @@ function init(){
       }
   }
 
-  if(y + dy > canvas.height - ballRadius || y + dy < ballRadius){
-    dy = -dy;
+  if(y + dy > canvas.height - ballRadius){
+    if(x > paddleX && x < paddleX + paddleWidth){
+      dy = -dy;
+    }else{
+      // mostra a janela de game over
+      document.getElementById('final-score').innerText = score;
+      document.getElementById('game-over').style.display = 'block';
+    }
   }
-
-  x += dx;
-  y += dy;
 }
 
 setInterval(init, 10);
